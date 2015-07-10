@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://ahmedonawale:pr0t0c0l@ds047742.mongolab.com:47742/tides-research',
+	db: 'mongodb://ammyreal:pr0t0c0l@ds047742.mongolab.com:47742/tides-research',
 	assets: {
 		lib: {
 			css: [
