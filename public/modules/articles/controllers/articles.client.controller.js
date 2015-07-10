@@ -3,11 +3,24 @@
 angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
 	function($scope, $stateParams, $location, Authentication, Articles) {
 		$scope.authentication = Authentication;
+		$scope.categories = [];
+
+		$scope.updateCategories = function($event) {
+			var element = angular.element($event.srcElement);
+			var index = $scope.categories.indexOf(element[0].defaultValue);
+			if(index < 0) {
+				$scope.categories.push(element[0].defaultValue);
+			} else {
+				$scope.categories.splice(index, 1);
+			}
+			console.log($scope.categories);
+		};
 
 		$scope.create = function() {
 			var article = new Articles({
 				title: this.title,
-				content: this.content
+				content: this.content,
+				categories: $scope.categories
 			});
 			article.$save(function(response) {
 				$location.path('articles/' + response._id);
