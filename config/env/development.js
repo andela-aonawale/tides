@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/tides-dev',
+	// db: 'mongodb://localhost/tides-dev',
+	db: 'mongodb://ammyreal:pr0t0c0l@ds047742.mongolab.com:47742/tides-research',
 	app: {
 		title: 'tides - Development Environment'
 	},
