@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/tides',
+	db: 'mongodb://ahmedonawale:pr0t0c0l@ds047742.mongolab.com:47742/tides-research',
 	assets: {
 		lib: {
 			css: [
