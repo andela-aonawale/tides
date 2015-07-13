@@ -13,7 +13,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 			} else {
 				$scope.categories.splice(index, 1);
 			}
-			console.log($scope.categories);
 		};
 
 		$scope.create = function() {
