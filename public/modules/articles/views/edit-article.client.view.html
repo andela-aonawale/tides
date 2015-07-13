@@ -9,8 +9,9 @@
 					<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.title.$invalid}">
 						<label class="control-label" for="title">Title</label>
 						<div class="controls">
-							<input name="title" type="text" data-ng-model="article.title" id="title" class="form-control" placeholder="Title" required>
+							<input name="title" type="text" data-ng-maxlength="120" data-ng-model="article.title" id="title" class="form-control" placeholder="Title" required>
 						</div>
+						<small ng-show="articleForm.title.$error.maxlength">Title is too long</small>
 						<div ng-show="submitted && articleForm.title.$invalid" class="help-block">
 							<p ng-show="articleForm.title.$error.required" class="text-danger">Title is required</p>
 						</div>
@@ -25,7 +26,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Update" class="btn btn-default">
+						<input type="submit" ng-disabled="articleForm.title.$error.maxlength" value="Update" class="btn btn-default">
 					</div>
 					<div data-ng-show="error" class="text-danger">
 						<strong data-ng-bind="error"></strong>
